@@ -10,6 +10,15 @@
     android:paddingTop="35dp"
     tools:context="com.example.bruno.jogo_galo.MainActivity">
 
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
