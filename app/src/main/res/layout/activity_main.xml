@@ -3,111 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@mipmap/backgmain"
     android:paddingBottom="16dp"
     android:paddingLeft="22dp"
     android:paddingRight="22dp"
     android:paddingTop="35dp"
     tools:context="com.example.bruno.jogo_galo.MainActivity">
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="20sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:background="@android:color/background_dark"
-        android:columnCount="3"
-        android:rowCount="3"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
-
-        <Button
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="-5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="-5dp"
-            android:background="@drawable/square"
-            android:id="@+id/b1"/>
-
-        <Button
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="-5dp"
-            android:background="@drawable/square"
-            android:id="@+id/b2"/>
-
-        <Button
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginRight="-5dp"
-            android:layout_marginTop="-5dp"
-            android:background="@drawable/square"
-            android:id="@+id/b3"/>
-
-        <Button
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginLeft="-5dp"
-            android:background="@drawable/square"
-            android:id="@+id/b4"/>
-
-        <Button
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/square"
-            android:id="@+id/b5"/>
-
-        <Button
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginRight="-5dp"
-            android:background="@drawable/square"
-            android:id="@+id/b6"/>
-
-        <Button
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginBottom="-5dp"
-            android:layout_marginLeft="-5dp"
-            android:background="@drawable/square"
-            android:id="@+id/b7"/>
-
-        <Button
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginBottom="-5dp"
-            android:background="@drawable/square"
-            android:id="@+id/b8"/>
-
-        <Button
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginBottom="-5dp"
-            android:layout_marginRight="-5dp"
-            android:background="@drawable/square"
-            android:id="@+id/b9"/>
-
-    </GridLayout>
 
     <Button
-        android:id="@+id/reset"
+        android:id="@+id/pvp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="47dp"
-        android:text="RESET"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="27dp"
+        android:text="P1 vs P2"
+        android:textSize="20sp"
+        android:onClick="goJogo"
+        android:layout_below="@+id/pve"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:id="@+id/pve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="P1 vs AI"
+        android:textSize="20sp"
+        android:onClick="goJogo"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/pvp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:text="Jogo do Galo"
+        android:textSize="32sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
