@@ -41,6 +41,8 @@ public class Jogo extends Activity {
         bt9 = (Button) findViewById(R.id.b9);
         res = (Button) findViewById(R.id.reset);
 
+        //if(activityThatCalled.getIntExtra("main",0)==1) res.setText("1");
+
         res.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -281,7 +283,6 @@ public class Jogo extends Activity {
     int isSolution(){
         int o1=0, o2=0, o3=0, o4=0;
         int x1=0, x2=0, x3=0, x4=0;
-        //int[][] config = {{0,0,2},{0,2,0},{2,0,0}};
 
         for(int j=0; j<3; j++){
             for(int jj=0; jj<3; jj++){
@@ -298,6 +299,10 @@ public class Jogo extends Activity {
                     break;
                 }
             }
+
+            if(x1==3){ changeColor("x1", j); return 1;}
+            if(o1==3){ changeColor("o1", j); return 2;}
+
             for(int jj=0; jj<3; jj++){
                 if(config[jj][j] == 1){
                     x2++;
@@ -312,8 +317,11 @@ public class Jogo extends Activity {
                     break;
                 }
             }
-            if(x1 == 3 || o1 == 3 || x2 == 3 || o2 == 3) break;
+
+            if(x2==3){ changeColor("x2", j); return 1;}
+            if(o2==3){ changeColor("o2", j); return 2;}
         }
+
         for(int j=0; j<3; j++){
             if(config[j][j] == 1){
                 x3++;
@@ -328,6 +336,10 @@ public class Jogo extends Activity {
                 break;
             }
         }
+
+        if(x3==3){ changeColor("x3", 0); return 1;}
+        if(o3==3){ changeColor("o3", 0); return 2;}
+
         for(int j=2; j>=0; j--){
             if(config[j][2-j] == 1){
                 x4++;
@@ -343,8 +355,100 @@ public class Jogo extends Activity {
             }
         }
 
-        if ((x1==3 || x2==3) || (x3==3 || x4==3)) return 1;         // 1 =  X wins
-        else if ((o1==3 || o2==3) || (o3==3 || o4==3)) return 2;    // 2 =  O wins
-        else return 0;	                                            // 0 = no win
+        if(x4==3){ changeColor("x4", 0); return 1;}
+        if(o4==3){ changeColor("o4", 0); return 2;}
+
+        return 0;   // 1 =  X wins  2 =  O wins  0 = no win
+    }
+
+    void changeColor(String var, int num){
+        if(var.equals("x1")){
+            if(num == 0){
+                bt1.setBackgroundResource(R.drawable.crossred);
+                bt2.setBackgroundResource(R.drawable.crossred);
+                bt3.setBackgroundResource(R.drawable.crossred);
+            }
+            else if(num == 1){
+                bt4.setBackgroundResource(R.drawable.crossred);
+                bt5.setBackgroundResource(R.drawable.crossred);
+                bt6.setBackgroundResource(R.drawable.crossred);
+            }
+            else{
+                bt7.setBackgroundResource(R.drawable.crossred);
+                bt8.setBackgroundResource(R.drawable.crossred);
+                bt9.setBackgroundResource(R.drawable.crossred);
+            }
+        }
+        else if(var.equals("o1")){
+            if(num == 0){
+                bt1.setBackgroundResource(R.drawable.circulo2red);
+                bt2.setBackgroundResource(R.drawable.circulo2red);
+                bt3.setBackgroundResource(R.drawable.circulo2red);
+            }
+            else if(num == 1){
+                bt4.setBackgroundResource(R.drawable.circulo2red);
+                bt5.setBackgroundResource(R.drawable.circulo2red);
+                bt6.setBackgroundResource(R.drawable.circulo2red);
+            }
+            else{
+                bt7.setBackgroundResource(R.drawable.circulo2red);
+                bt8.setBackgroundResource(R.drawable.circulo2red);
+                bt9.setBackgroundResource(R.drawable.circulo2red);
+            }
+        }
+        else if(var.equals("x2")){
+            if(num == 0){
+                bt1.setBackgroundResource(R.drawable.crossred);
+                bt4.setBackgroundResource(R.drawable.crossred);
+                bt7.setBackgroundResource(R.drawable.crossred);
+            }
+            else if(num == 1){
+                bt2.setBackgroundResource(R.drawable.crossred);
+                bt5.setBackgroundResource(R.drawable.crossred);
+                bt8.setBackgroundResource(R.drawable.crossred);
+            }
+            else {
+                bt3.setBackgroundResource(R.drawable.crossred);
+                bt6.setBackgroundResource(R.drawable.crossred);
+                bt9.setBackgroundResource(R.drawable.crossred);
+            }
+        }
+        else if(var.equals("o2")){
+            if(num == 0){
+                bt1.setBackgroundResource(R.drawable.circulo2red);
+                bt4.setBackgroundResource(R.drawable.circulo2red);
+                bt7.setBackgroundResource(R.drawable.circulo2red);
+            }
+            else if(num == 1){
+                bt2.setBackgroundResource(R.drawable.circulo2red);
+                bt5.setBackgroundResource(R.drawable.circulo2red);
+                bt8.setBackgroundResource(R.drawable.circulo2red);
+            }
+            else {
+                bt3.setBackgroundResource(R.drawable.circulo2red);
+                bt6.setBackgroundResource(R.drawable.circulo2red);
+                bt9.setBackgroundResource(R.drawable.circulo2red);
+            }
+        }
+        else if(var.equals("x3")){
+            bt1.setBackgroundResource(R.drawable.crossred);
+            bt5.setBackgroundResource(R.drawable.crossred);
+            bt9.setBackgroundResource(R.drawable.crossred);
+        }
+        else if(var.equals("o3")){
+            bt1.setBackgroundResource(R.drawable.circulo2red);
+            bt5.setBackgroundResource(R.drawable.circulo2red);
+            bt9.setBackgroundResource(R.drawable.circulo2red);
+        }
+        else if(var.equals("x4")){
+            bt3.setBackgroundResource(R.drawable.crossred);
+            bt5.setBackgroundResource(R.drawable.crossred);
+            bt7.setBackgroundResource(R.drawable.crossred);
+        }
+        else if(var.equals("o4")){
+            bt3.setBackgroundResource(R.drawable.circulo2red);
+            bt5.setBackgroundResource(R.drawable.circulo2red);
+            bt7.setBackgroundResource(R.drawable.circulo2red);
+        }
     }
 }

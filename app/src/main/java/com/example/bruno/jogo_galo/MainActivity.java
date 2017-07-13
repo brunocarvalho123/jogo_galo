@@ -16,24 +16,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goJogo(View view) {
-
-        // We have to state that are intention is to open another Activity. We do so
-        // by passing a Context and the Activity that we want to open
-
         Intent jogar = new Intent(this, Jogo.class);
-        //jogar.putExtra("callingActivity", "MainActivity");
-
-        // We ask for the Activity to start and don't expect a result to be sent back
+        jogar.putExtra("main", 3);
         startActivity(jogar);
-
-        // We use startActivityForResult when we expect a result to be sent back
-        /*
-        final int result = 1;
-
-        // To send data use putExtra with a String name followed by its value
-        getNameScreenIntent.putExtra("callingActivity", "MainActivity");
-        startActivityForResult(getNameScreenIntent, result);
-        */
     }
 }
 
