@@ -15,9 +15,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void goJogo(View view) {
+    public void goPvP(View view) {
         Intent jogar = new Intent(this, Jogo.class);
-        jogar.putExtra("main", 3);
+        jogar.putExtra("main", 1);
+        startActivity(jogar);
+    }
+
+    public void goPvE(View view) {
+        Intent jogar = new Intent(this, Jogo.class);
+        jogar.putExtra("main", 2);
         startActivity(jogar);
     }
 }

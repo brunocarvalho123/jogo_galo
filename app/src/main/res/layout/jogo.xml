@@ -12,19 +12,23 @@
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="20sp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
 
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="39dp"
         android:background="@android:color/background_dark"
         android:columnCount="3"
         android:rowCount="3"
-        android:layout_alignParentTop="true"
+        android:id="@+id/gridLayout"
+        android:layout_below="@+id/tv1"
         android:layout_centerHorizontal="true">
 
         <Button
@@ -101,11 +105,21 @@
 
     <Button
         android:id="@+id/reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="47dp"
-        android:text="RESET"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/restarticon"
+        android:layout_below="@+id/gridLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+
+    <Button
+        android:id="@+id/aifirst"
+        android:layout_width="66sp"
+        android:layout_height="55sp"
+        android:background="@drawable/aifirst"
+        android:text=""
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="8dp" />
 
 </RelativeLayout>

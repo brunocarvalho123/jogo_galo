@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/backgmain"
+    android:background="@mipmap/mainback5"
     android:paddingBottom="16dp"
     android:paddingLeft="22dp"
     android:paddingRight="22dp"
@@ -13,33 +13,26 @@
 
     <Button
         android:id="@+id/pvp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:text="P1 vs P2"
+        android:layout_width="167.16sp"
+        android:layout_height="60sp"
+        android:onClick="goPvP"
+        android:text=""
+        android:background="@drawable/p1vsp2"
         android:textSize="20sp"
-        android:onClick="goJogo"
-        android:layout_below="@+id/pve"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignBottom="@+id/pve"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="92dp" />
 
     <Button
         android:id="@+id/pve"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="P1 vs AI"
+        android:layout_width="167.16sp"
+        android:layout_height="60sp"
+        android:onClick="goPvE"
+        android:text=""
+        android:background="@drawable/p1vsai"
         android:textSize="20sp"
-        android:onClick="goJogo"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/textView"
+        android:layout_marginBottom="67dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/pvp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:text="Jogo do Galo"
-        android:textSize="32sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>
